@@ -95,7 +95,7 @@ for input_file in os.listdir(input_folder):
     alpha, clauses = read_input(file_name)
 
     keys = []
-    for c in clauses:
+    for c in clauses + [alpha]:
         ls = c.split('OR')
         for k in ls:
             k = k.strip().strip('-')
