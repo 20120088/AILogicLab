@@ -1,3 +1,5 @@
 *.txt
 *.docx
 draft.ipynb
+*.pptx
+*.tmp

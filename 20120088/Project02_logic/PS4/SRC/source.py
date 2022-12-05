@@ -4,9 +4,7 @@ import os
 def valid_resolvent(c1, c2, res):
     if ((res > 1) | (res < -1)).sum(): return False
 
-    duality = 0
-    for i in range(len(res)):
-        if (c1[i] * c2[i] == -1): duality += 1
+    duality = (c1 * c2 == -1).sum()
     if duality != 1: return False
 
     return True
