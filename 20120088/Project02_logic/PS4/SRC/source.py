@@ -4,18 +4,6 @@ import os
 def valid_resolvent(c1, c2, res):
     if ((res > 1) | (res < -1)).sum(): return False
 
-    # for c in [c1, c2]:
-    #     nonzero_zero = 0
-
-    #     for i in range(len(res)):
-    #         if c[i] != 0:
-    #             if res[i] == 0: nonzero_zero += 1
-    #             if nonzero_zero > 1: return False
-    
-    # not_change = 0
-    # for i in range(len(res)):
-    #     if (c1[i] == res[i]) | (c2[i] == res[i]): not_change += 1
-    # if not_change >= res.shape[0]: return False
     duality = 0
     for i in range(len(res)):
         if (c1[i] * c2[i] == -1): duality += 1
