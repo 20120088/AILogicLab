@@ -45,7 +45,7 @@ def read_input(file_name):
     with open(file_name) as f:
         lines = f.readlines()
         alpha = lines[0].strip()
-        clauses = [x.strip() for x in lines[2:]]
+        clauses = [x.strip() for x in lines[2:2 + int(lines[1]) - 1]]
         return alpha, clauses
 
 def write_output(file_name, output):
