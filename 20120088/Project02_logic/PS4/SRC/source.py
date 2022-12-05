@@ -97,9 +97,9 @@ for input_file in os.listdir(input_folder):
     encode_table = dict(zip(keys, range(len(keys))))
     decode_table = np.array([[f'-{c}', '', c] for c in keys])
 
+    alpha_break = alpha.split(' OR ')
+    clauses += alpha_break
     encoded_clauses = np.array([clause_encoder(c) for c in clauses])
-    alpha_break = alpha_encoder(alpha)
-    encoded_clauses = np.vstack([encoded_clauses, alpha_break])
 
     output_file = os.path.join(cwd, 'OUTPUT', 'output' + file_name[-5] + '.txt')
     write_output(output_file, PL_RESOLUTION(encoded_clauses))
